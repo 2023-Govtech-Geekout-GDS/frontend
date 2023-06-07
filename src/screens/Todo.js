@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Container, Button, Form, FormCheck } from "@govtechsg/sgds-react";
+import CONFIG from "../config";
 import Table from "../components/Table";
 
 // TodoItem element that manages updates and deletion of todo items
@@ -61,19 +62,17 @@ function Todo() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              {/* Iterate todoItems list to create new rows */}
-              {Object.keys(todoItems).map((item) => (
-                // Forwards items to TodoItem element as props
-                <TodoItem
-                  key={todoItems[item].id}
-                  id={todoItems[item].id}
-                  done={todoItems[item].done}
-                  description={todoItems[item].description}
-                  refreshToDos={populateTodos}
-                />
-              ))}
-            </tr>
+            {/* Iterate todoItems list to create new rows */}
+            {Object.keys(todoItems).map((item) => (
+              // Forwards items to TodoItem element as props
+              <TodoItem
+                key={todoItems[item].id}
+                id={todoItems[item].id}
+                done={todoItems[item].done}
+                description={todoItems[item].description}
+                refreshToDos={populateTodos}
+              />
+            ))}
             <tr>
               <td>
                 <FormCheck disabled />

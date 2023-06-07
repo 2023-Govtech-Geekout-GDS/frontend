@@ -5,7 +5,7 @@ const config = {
         API_ENDPOINT: "http://localhost:9000/api/todos"
     },
     development: {
-        API_ENDPOINT: "http://localhost:9000/api/todos"
+        API_ENDPOINT: "http://localhost:9000/api/todosfirebase"
     },
     production: {
         API_ENDPOINT: "<deployed-api-endpoint>"
